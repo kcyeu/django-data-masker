@@ -50,10 +50,10 @@ django-data-masker has some pre-configured settings which can be modified by add
 +-----------------------------------+----------------------------------------------+---------------------------------------------+
 | Variable                          | Usage                                        | Default                                     |
 +===================================+==============================================+=============================================+
-| DATA_MASKER_DEFAULT_CLEAR_HEADING | Number of heading characters leave untouched | 2                                           |
+| DATA_MASKER_CLEAR_HEADING | Number of heading characters leave untouched | 2                                           |
 +-----------------------------------+----------------------------------------------+---------------------------------------------+
-| DATA_MASKER_DEFAULT_CLEAR_TAILING | Number of tailing characters leave untouched | 2                                           |
+| DATA_MASKER_CLEAR_TAILING | Number of tailing characters leave untouched | 2                                           |
 +-----------------------------------+----------------------------------------------+---------------------------------------------+
-| DATA_MASKER_DEFAULT_FIELD_LIST    | List of field name to mask                   | ['account_name', 'account_number', 'email'] |
+| DATA_MASKER_FIELD_LIST    | List of field name to mask                   | ['account_name', 'account_number', 'email'] |
 +-----------------------------------+----------------------------------------------+---------------------------------------------+
 
