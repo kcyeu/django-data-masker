@@ -3,8 +3,8 @@ Data Masker
 ===========
 
 Data Masker is a simple Django app to do data masking. It masks sensitive data
-by ``field_name`` and is highly configurable. Currently ``CharField`` and
-``EmailField`` are supported.
+by name of form fields and is highly configurable. Currently `CharField <https://docs.djangoproject.com/en/dev/ref/forms/fields/#charfield>`_ and
+`EmailField <https://docs.djangoproject.com/en/dev/ref/forms/fields/#emailfield>`_ are supported.
 
 Quick start
 -----------
@@ -42,3 +42,18 @@ Example template
       
       <button type="submit">Submit</button>
     </form>
+    
+Settings
+--------
+django-data-masker has some pre-configured settings which can be modified by adding variables with ``DATA_MASKER_`` prefix in your ``settings.py`` and customizing the values you want.
+
++-----------------------------------+----------------------------------------------+---------------------------------------------+
+| Variable                          | Usage                                        | Default                                     |
++===================================+==============================================+=============================================+
+| DATA_MASKER_DEFAULT_CLEAR_HEADING | Number of heading characters leave untouched | 2                                           |
++-----------------------------------+----------------------------------------------+---------------------------------------------+
+| DATA_MASKER_DEFAULT_CLEAR_TAILING | Number of tailing characters leave untouched | 2                                           |
++-----------------------------------+----------------------------------------------+---------------------------------------------+
+| DATA_MASKER_DEFAULT_FIELD_LIST    | List of field name to mask                   | ['account_name', 'account_number', 'email'] |
++-----------------------------------+----------------------------------------------+---------------------------------------------+
+
