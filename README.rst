@@ -2,6 +2,9 @@
 Data Masker
 ===========
 
+.. image:: https://badge.fury.io/py/django-data-masker.svg
+    :target: https://badge.fury.io/py/django-data-masker
+    
 Data Masker is a simple Django app to do data masking. It masks sensitive data
 by name of form fields and is highly configurable. Currently `CharField <https://docs.djangoproject.com/en/dev/ref/forms/fields/#charfield>`_ and
 `EmailField <https://docs.djangoproject.com/en/dev/ref/forms/fields/#emailfield>`_ are supported.
