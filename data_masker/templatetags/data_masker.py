@@ -37,7 +37,7 @@ class FormMasker(BaseMasker):
         settings, 'DATA_MASKER_CLEAR_TAILING', DATA_MASKER_DEFAULT_CLEAR_TAILING)
 
     mask_full_email = getattr(
-        settings, ''DATA_MASKER_MASK_FULL_EMAIL', DATA_MASKER_DEFAULT_MASK_FULL_EMAIL)
+        settings, 'DATA_MASKER_MASK_FULL_EMAIL', DATA_MASKER_DEFAULT_MASK_FULL_EMAIL)
 
     field_list = getattr(
         settings, 'DATA_MASKER_FIELD_LIST', DATA_MASKER_DEFAULT_FIELD_LIST)
