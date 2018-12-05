@@ -7,6 +7,7 @@ register = template.Library()
 
 DATA_MASKER_DEFAULT_CLEAR_HEADING = 2
 DATA_MASKER_DEFAULT_CLEAR_TAILING = 2
+DATA_MASKER_DEFAULT_MASK_FULL_EMAIL = False
 DATA_MASKER_DEFAULT_FIELD_LIST = [
     'account_name',
     'account_number',
@@ -34,6 +35,9 @@ class FormMasker(BaseMasker):
 
     clear_tailing = getattr(
         settings, 'DATA_MASKER_CLEAR_TAILING', DATA_MASKER_DEFAULT_CLEAR_TAILING)
+
+    mask_full_email = getattr(
+        settings, ''DATA_MASKER_MASK_FULL_EMAIL', DATA_MASKER_DEFAULT_MASK_FULL_EMAIL)
 
     field_list = getattr(
         settings, 'DATA_MASKER_FIELD_LIST', DATA_MASKER_DEFAULT_FIELD_LIST)
@@ -76,7 +80,10 @@ class FormMasker(BaseMasker):
             if field_type is CharField:
                 new_value = self.mask_string(original_value)
             elif field_type is EmailField:
-                new_value = self.mask_email(original_value)
+                if self.mask_full_email:
+                    new_value = self.mask_string(original_value)
+                else:
+                    new_value = self.mask_email(original_value)
 
             self.form.initial[field_name] = new_value
 
